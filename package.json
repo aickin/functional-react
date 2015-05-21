@@ -1,6 +1,6 @@
 {
   "name": "functional-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An experiment in making a functional API for React components",
   "main": "./dist/functional-react.js",
   "scripts": {
