@@ -47,3 +47,24 @@ const render = ({props}, handler) => {
 
 export default component({render});
 ```
+
+## API
+
+The API maps very directly onto the React component API. All of the "instance" methods are passed in the current props and state as the first argument, so they use that rather than using `this.props` or `this.state`. In methods where it is appropriate to call `this.setState`, that method is passed in as well.
+
+### render({props, state}, handler) : ReactElement
+### getInitialState() : object
+### getDefaultProps() : object
+### propTypes : object
+### displayName : object
+### componentWillMount({props, state}, setState) : void
+### componentDidMount({props, state})
+### componentWillReceiveProps({props, state}, nextProps, setState)
+### shouldComponentUpdate({props, state}, ({props, state}) : boolean  
+(note that the second arg is the nextProps/State)
+### componentWillUpdate({props, state}, ({props, state})
+(note that the second arg is the nextProps/State)
+### componentDidUpdate({props, state}, ({props, state})
+(note that the second arg is the prevProps/State)
+### componentWillUnmount({props, state})
+
