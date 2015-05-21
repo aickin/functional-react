@@ -56,18 +56,22 @@ The Component API maps very directly onto the React component API. All of the "i
 The first argument is the current props/state, which should be all that the component needs to render. Note that the second argument is a function that will wrap an event handler function and return a handler that is always bound correctly to the current state. See the Event API below for event handler signatures.
 
 #### getInitialState() : object
+Returns the initial state of an instance of this component.
 
 #### getDefaultProps() : object
+Returns the default set of props for an instance of this component; note that the default props are shared amongst all instances.
 
 #### propTypes : object
+Used for validating props that are passed to this component.
 
 #### displayName : String
 This is just passed through to React as the component's displayName
 
 #### componentWillMount({props, state}, setState) : void
+Called before the component is mounted into the DOM, with the current props/state combo and the setState function.
 
 #### componentDidMount({props, state})
-
+Called after the component is mounted into the DOM, with the current props/state combo.
 
 #### componentWillReceiveProps({props, state}, nextProps, setState)
 The first argument is the current props/state, the second argument is the new props that the component will have, and the third argument is the setState function that can change this component's state if necessary. 
@@ -82,6 +86,7 @@ The first argument is the current props/state, and the second arg is the next pr
 The first argument is the current props/state, and the second arg is the previous props/state.
 
 #### componentWillUnmount({props, state})
+Called before the component is unmounted from the DOM.
 
 ## Event Handler API
 
@@ -89,4 +94,3 @@ When an event handler is passed to `handler` in the `render` method, it guarante
 
 #### eventHandler({props, state}, setState)
 The first argument is the current props/state, the second argument is the setState function that can change this component's state if necessary.
-
