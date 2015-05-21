@@ -94,3 +94,27 @@ When an event handler is passed to `handler` in the `render` method, it guarante
 
 #### eventHandler({props, state}, setState)
 The first argument is the current props/state, the second argument is the setState function that can change this component's state if necessary.
+
+## Is this a good idea?
+
+I'm not really sure. There's a certain purity to it, for two reasons that I can see:
+
+1. Components can't messily put attributes on the `this` object and expect them to be around later, which means that components have to be more rigorous about using props and state.
+2. The API is clearer about when `setState` is allowed to be called and when it isn't.
+
+Those seem better, but they seem like just marginal wins to me. 
+
+One thing that I haven't fully groked is what this does to mixins. I think that in many cases mixins just become functions that you import. For example, imagine a component whose render only depends on props and state and therefore wants to implement a "pure" `shouldComponentUpdate` function:
+
+```javascript
+import component from "functional-react";
+import {PureShouldComponentUpdate} from "should-component-update";
+
+const render = ({props}) => {
+	return <div>Hello, {props.name}!</div>;
+} 
+
+export default component({render, shouldComponentUpdate:PureShouldComponentUpdate});
+```
+
+You could also imagine composing library functions together into chains to implement a lifecycle method for your component. This seems to me a bit cleaner than the current mixin story, but I doubt I've considered all its contours.
