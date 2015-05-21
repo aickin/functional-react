@@ -1,0 +1,32 @@
+{
+  "name": "functional-react",
+  "version": "0.1.0",
+  "description": "An experiment in making a functional API for React components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/browserify/bin/cmd.js -t babelify -t uglifyify index.js -o ./dist/output.js -x react"
+  },
+  "keywords": [
+    "react",
+    "functional",
+    "component"
+  ],
+  "author": "Sasha Aickin",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "babel": "5.4.3",
+    "babelify": "6.1.1",
+    "browserify": "10.2.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.4",
+    "uglifyify": "3.0.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "react": "0.13.3"
+  }
+}
