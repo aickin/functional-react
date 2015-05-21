@@ -1,11 +1,11 @@
 {
   "name": "functional-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An experiment in making a functional API for React components",
-  "main": "index.js",
+  "main": "./dist/functional-react.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/browserify/bin/cmd.js -t babelify -t uglifyify index.js -o ./dist/output.js -x react"
+    "build": "node ./build.js"
   },
   "keywords": [
     "react",
