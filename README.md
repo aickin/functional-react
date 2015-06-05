@@ -57,7 +57,7 @@ The Component API maps very directly onto the React component API. All of the ex
 When `setState` is passed in, it is a function with the same signature and behavior as React's `setState`.
 
 #### render({props, state}, handler) : ReactElement
-The first argument is the current props/state, which should be all that the component needs to render. Note that the second argument is a function that will wrap an event handler function and return a handler that is always bound correctly to the correct component props & state. See the Event API below for event handler signatures.
+The first argument is the current props & state, which should be all that the component needs to render. Note that the second argument is a function that will wrap an event handler function and return a handler that is always bound correctly to the correct component props & state. See the Event API below for event handler signatures.
 
 #### getInitialState() : object
 Returns the initial state of an instance of this component. This method is *not* passed props & state, as the component has not yet been created.
@@ -97,7 +97,7 @@ Called before the component is unmounted from the DOM.
 When an event handler is passed to `handler` in the `render` method, it guarantees that the event handler will always be called with the following arguments:
 
 #### eventHandler({props, state}, setState)
-The first argument is the current props/state, the second argument is the setState function that can change this component's state if necessary.
+The first argument is the current props & state, the second argument is the setState function that can change this component's state if necessary.
 
 ## Is this a good idea?
 
