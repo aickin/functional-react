@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "description": "An experiment in making a functional API for React components",
   "main": "./dist/functional-react.js",
+  "homepage": "https://github.com/aickin/functional-react",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./build.js"
